@@ -1,0 +1,16 @@
+'''
+Created on 2 Dec 2015
+
+@author: seamas
+'''
+import SimpleHTTPServer
+import SocketServer
+
+PORT = 8000
+
+Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+address = ('localhost', PORT)
+httpd = SocketServer.TCPServer(address, Handler)
+
+print "serving at port", PORT
+httpd.serve_forever()
